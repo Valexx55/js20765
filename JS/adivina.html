@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>
+        ADIVINA adivinanza
+    </title>
+    <!--
+ *
+ *El código de esta script, es un poco misterioso. Algún programador Clase "C", no ha usado
+ *nombres descriptivos y ahora, nos toca pegarnos y descubrir qué narices hace este código,
+ *para poder usarlo en nuestro proyecto.
+ *
+ *
+ *Se pide:
+ *
+ *1) Adivinar la funcionalidad del método adivinaQueHace
+ Es una función que dada una palabra, nos dice si es o no palíndroma
+ *2) Una vez descubierto, aplicar un nombre apropiado al método
+ 
+ *3) Idear un método equivalente, pero distinto. Es decir, crear un método
+ *que haga lo mismo que adivinaQueHace, pero de otra manera.
+ 
+ 
+ *4) EXTRA: Sólo si resolviste los puntos anteriores, implementa una versión recursiva
+-->
+    <script language="javascript">
+
+
+
+
+        function invertir(cadena) {
+            var x = cadena.length;
+            var cadenaInvertida = "";
+
+            while (x >= 0) {
+                cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+                x--;
+            }
+            return cadenaInvertida;
+        }
+
+
+
+
+        //  function adivinaQueHace() {
+        function esPalindromoNat() {
+            var es_palin = true;
+            var cad = document.getElementById("palabra").value;
+        
+            if (cad != invertir(cad)) {
+                es_palin = false;
+            }
+
+            console.log("es_palin = " + es_palin);
+            return es_palin;
+        }
+
+        function esPalindromo() {
+            var es_palin = true;
+            var cad = document.getElementById("palabra").value;
+            var i = 0;
+            var j = cad.length - 1;
+
+            while ((i < j) && (es_palin)) { //es_palin==true{
+                if (cad.charAt(i) == cad.charAt(j)) {
+                    es_palin = true;
+                } else {
+                    es_palin = false;
+                }
+                i++;//i=i+1;
+                j--;//j=j-1
+            }
+
+            console.log("es_palin = " + es_palin);
+            return es_palin;
+        }
+
+        function esPalindromoRecurisvo
+        (p) {
+            if (p.length <= 1) {
+                return true;
+            }
+            else {
+                if (p.charAt(0) == p.charAt(p.length - 1)) {
+                    return esPalindromoRecurisvo
+                    (p.substring(1, p.length - 1));
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        //VERSIÓN RECURSIVA BY JUAN CARLOS
+        function esPalindromoRec ()
+        {
+            var es_palin = false;
+
+                let palabra = document.querySelector("#palabra").value;
+                console.log("es_palin = " + es_palin);
+
+            return es_palin;
+        }
+
+    </script>
+</head>
+
+<body>
+    <label for="palabra">PALABRA</label>
+    <input type="text" id="palabra">
+    <!-- <button onclick="esPalindromo();">Empieza</button> -->
+    <!-- <button onclick="esPalindromoNat();">Empieza</button> -->
+    <button onclick="esPalindromoRec();">Empieza</button>
+    <p id="p1"></p>
+</body>
+
+</html>

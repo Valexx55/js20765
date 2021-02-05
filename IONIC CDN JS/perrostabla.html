@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <style>
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+        
+        
+            </style>
+    <script>
+        const URI_PERROS = "https://dog.ceo/api/breeds/image/random/";
+
+        function obtenerPerro() {
+            console.log("Ha pedido un perro");
+
+            //Comprobamos la cantidad de perros
+            const select = document.getElementById("numPerros");
+
+            console.log(select.value);
+            if (select.value == undefined) {
+                    alert("Selecciona una opción.");
+            }
+            else {
+                //TODO LLAMAR AL DOG API
+                fetch(URI_PERROS+select.value)//HAEMOS LA PETICIÓN GET
+                    .then(response => response.json())//CUANDO ESTÉ LISTA, HACE ESTO --response es el cuerpo de la respuesta
+                    .then(data => dibujarTabla(data.message));
+            }
+
+
+        }
+
+        function dibujarTabla(perros) {
+            let mygrid = document.getElementById("mygrid");
+
+            if (mygrid.innerHTML != "") borrarTabla(mygrid);
+
+            let row, col, img;
+            let contador = 0;
+            for ( let i = 0; i < (perros.length/3); i++) {
+                row = document.createElement("ion-row")
+                for ( let j = 0; j < 3; j++) {
+                    col = document.createElement("ion-col");
+                    col.setAttribute("size", "4");
+
+                    img = document.createElement("img");
+
+                    img.src = perros[contador];
+                    contador++;
+
+                    col.appendChild(img);
+                    row.appendChild(col);
+                }
+
+                mygrid.appendChild(row);
+            }
+        }
+
+        function borrarTabla(mygrid) {
+            let filas = mygrid.childNodes;
+
+            for (var i = filas.length-1; i >= 0; i-- ) {
+                filas[i].remove();
+            }        }
+    </script>
+</head>
+<body>
+    <ion-list>
+        <ion-list-header>
+            <ion-label>
+            Selecciona la cantidad de perros a obtener.
+            </ion-label>
+        </ion-list-header>
+        
+        <ion-item>
+            <ion-label>Numero</ion-label>
+            <ion-select placeholder="Selecciona una opción." id="numPerros">
+            <ion-select-option value="3">3</ion-select-option>
+            <ion-select-option value="6">6</ion-select-option>
+            <ion-select-option value="9">9</ion-select-option>
+            <ion-select-option value="12">12</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-button size="small" onclick="obtenerPerro()">OBTENER PERROS</ion-button>
+    <ion-grid id="mygrid"></ion-grid>
+</body>
+</html>

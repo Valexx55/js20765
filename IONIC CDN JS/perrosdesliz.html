@@ -1,0 +1,48 @@
+------------------
+HTML
+------------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiPerros</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <script src="perros.js"></script>
+</head>
+
+<body>
+
+    <ion-app>
+        <ion-item>
+            <ion-label>Numero de perros aleatorios</ion-label>
+            <ion-select id="seleccion">
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="9">9</ion-select-option>
+                <ion-select-option value="12">12</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-header translucent>
+            <ion-toolbar>
+                <ion-button size="small" onclick="obtenerPerro()">Obtener perro</ion-button>
+            </ion-toolbar>
+        </ion-header>,
+
+
+
+        <ion-content>
+            <ion-slides id="imagenslides" pager="true">
+
+            </ion-slides>
+        </ion-content>
+    </ion-app>
+
+
+</body>
+
+</html>

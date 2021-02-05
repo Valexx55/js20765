@@ -1,0 +1,36 @@
+
+EMILIO Y ANA: Datos vacunación.
+    - Sacar todos los datos de una sola fuente
+    - Mismos iconos en todos los slide
+    - Sintetizar datos a pie de gráfico.
+
+MAPAS
+    -Al entrar por primera vez los mapas se muestran alejados (pequeños) y descentrados, sobretodo en Restricciones, menos en Municipios, y mejor en ZBS
+    - Al darle a localización, si no tienes activado el GPS, no te ubica (aunque hayas aceptado los permisos de localización)
+        /*navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);*/
+   
+
+MIZONA
+
+    -La lista desplegable es muy larga. Iria mejor una lista de búsqueda tipo la que ha en las estadísticas
+    -Al seleccionar una localidad, podría restringirse las ZBS a las de esa localidad. Por ejemplo. No que selecciones Parla y puedas elegur ZBS El Retiro
+    -¿la ZBS a seleccionar, debe corresponder a la localidad anteriormente seleccionada arriba?¿O valdría poner cualquier ZBS independientemente de la localidad seleccionada previamente? (pregunto) Esta pregunta va a esta sección, estaba en Comparar Zonas (???) 
+
+
+ESTADÍSTICAS
+    - Cuando pongo una localidad en el buscador, en sugerencias me sale esa misma localidad repetida varias veces (idem con ZBS)
+    - fALTA UTILIZAR MIZONA EN ESTADÍSITCAS (LCOALIDAD / ZONA BASICA DE SALUD)
+    - Al buscar una localidad/ciudad solo presenta los datos que caben en pantalla y no deja deslizar para mostrar el resto
+
+
+COMPARAR ZONAS
+   
+    - Comparar ZBS con un botón tipo switch
+    - La lista desplegable es muy larga. Iria mejor una lista de búsqueda tipo la que ha en las estadísticas
+
+
+GE
+    
+    - PROBAR CON UN MOVIL MAS PEQUEÑO (EMULADOR)
+    - DOCUMENTAR el código con comentarios JSdoc
+    - Resolver lo que debe hacerse al girar el móvil.

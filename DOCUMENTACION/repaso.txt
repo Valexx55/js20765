@@ -1,0 +1,124 @@
+IDE -- Integrated Development Enviroment
+mkdir -- comando para crear directorios
+ls -- comando para listar el contenido de un directorio
+pwd -- comando para saber en qué directorio estoy print working directory
+f() JS --  funcionar pag. : MODIFCAR Elementos / AJAX
+ECMA Script -- Estándar JS
+
+
+LISTENER --> Programar el listener es escuchar eventos
+CALLBACK --> La llamada desde otro programa a una f() mía
+document --> la variable predefinida que representaba el XML/HTML
+window --> la variable predefinida que representaba la ventana del navegador
+HTMLElement --> Elemento o etiqueta
+document.getElementById --> obtenemos un elmento por su nombre
+docuement.createElement --> creaabamos un nuevo Elemento
+docuement.appendChild --> añadimos y hacemos visible el elemento 
+innerHTML --> atributo de un elemento "lo del en medio" - entre las etiquetas de apertura y cierre -
+// --> comentario de una línea
+/* */ --> comentario multilínea
+String.charAt() --> método para obtener una letra concreta
+API --> Todo lo que yo puedo llamar como programador
+const --> palabra reservada para definir constantes
+var / let --> palabra reservada para declarar una variable
+ámbito --> parte de código donde una variable existe : global 
+
+CASTEAR / CASTING --> CONVERSIÓN EQUIVALENTE DE TIPOS
+parseInt --> f() global que convierte una cadena en un número de String a INt
+Parsear --> Recorrer de inicio a fin una estrcutra (fichero, cadena) y clasificar su contenido
+
+https://caniuse.com/ --> Página de consulta de APIS WEB (JS, CSS, HTML)
+visibilidad elemento --> style.visibility== hidden || visible
+location.reload() --> recargar la página actual
+location.href --> atriburto que representa url del navegador
+location.assign(url) vs location.replace(url)
+    los dos te dirigen a un url nueva
+    la diferencia es que con assign se actualizba el Historial del navegador
+onload --> evento / listener programable para cuando la página se parsee por completo
+Math.random () --> numero aleatorio entre [0, 1)
+--
+
+parámetros URL --> strings que van en la URL
+    ? inicio params
+    & separador de params
+    utlidad --> intercambiar info entre páginas o entre cli-servidor
+
+getElementsByTagName --> metodo que nos delolvia un array de Elementos
+array --> [] corchetes 
+    atributos interesantes
+        length: número de Elementos
+    función o métodos interesantes
+        sort --> ordenar
+        push --> insertar
+    acceder a un Elemento
+        array [posición] -- usamos el índice
+    borrar array   
+        array = null -No existe array.length --> error
+        array = [] -No existe array.length --> 0
+    "recorrer" --> ir del inicio al final de una estructura de datos
+    for .. of --> "bucle moderno" para iterar por una colección
+
+API localStorage y sessionStorage
+
+    métodos 
+        setItem (clave, valor)
+        getItem (clave):valor
+
+    localStorage --> "memoria permanente" (asociado al navegador)
+    sessionStorage --> "memoria volátil" (asociada a ventan concreta)
+
+
+SERIALIZAR: PASAR DE VARIABLE(OBJETO) A texto
+            JSON.stringify (objeto):stringify
+DESERIALZIAR: PASAR DE TEXTO a OBJETO (var)
+                JSON.parse (var):objeto
+
+PARA DOS COSAS: PARA TRANSIMITIR INFO
+                Y PARA GUARDARLA
+
+
+AJAX: Técnología de JS para realizar comunicaciones
+        con otro equipo a través de INTERNET
+
+        NOS permite enviar y recibir MENSAJES https
+        XMLHttpRequest 
+        JavaScript Asíncrono
+        Promesas Observables
+
+        comunicación:
+        URL protocolo://ip:puerto/appp/servicio?parametros=valor&p2=v2
+
+HTTP : cabecera y cuerpo
+        atributos de la cabecera
+            status code: ¿ha ido bien la cosa?
+            content-type: tipo mime: qué tipo de info viaja en el cuerpo
+            método: GET Y POST (obtner info del servidor // enviar info)
+            url
+        cuerpo: contenido (a veces vacío)
+
+
+validar en cliente y servidor
+
+NODE/JS --> Intérprete de JS (fuera del navegador)
+            Es un programa que entiende JS
+            Ya podemos ejecutar progrmas js (scritps) fuera del navegador
+            Node inluye NPM
+
+NPM -->     Repositorio de código js (donde cualquiera puede subir códig y compartirlo)
+            El CLI o el programa instalamos en nuestro equipo y nos permite 
+                - Descargarnos librerías JS del repositorio NPM
+
+$ --> CONCATENAR ABREVIADAMENTE
+if TERNARIO --> https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Conditional_Operator
+                CONDICION ? v : f;
+
+f() flecha/anónimas --> Más moderna, más econonómica, útil en algunos casos (this)
+
+array.map --> función que permite recorrer el array y transformar cada valor
+
+FETCH --> Alternativa a AJAX que funcionan con Promesas
+          Las promesas son una alternativa reciente para manejar lo Asíncrono en jsonplaceholder
+
+CDN --> Servidor en línea para ofrecer contenido de alta demanda
+CDN IONIC --> poder usar todos los componente de la Interfaz de Usuaario de IONIC
+Catálogo de componeres IU IOnic: https://ionicframework.com/docs/api/

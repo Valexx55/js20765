@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CALCULA LETRA DNI</title>
+    <meta charset="UTF-8">
+    <script>
+
+        const URL_INFO_GIT = "https://my-json-server.typicode.com/valexx55/dni207651/infopersona";
+        //TODO VALIDAR LA ENTRADA
+        var xhr = new XMLHttpRequest();
+        function calcularURL(numero) {
+            let url_completa = '';
+          
+                console.log("DNI nacional sin letra");
+                url_completa = URL_LETRA_DNI + numero;
+            
+            return url_completa;
+        }
+        
+        function obtenerInfoGit() {
+            //todo calcular la letra del dni introducido
+            //http://www.interior.gob.es/web/servicios-al-ciudadano/dni/calculo-del-digito-de-control-del-nif-nie
+            //1 OBTENER EL NÚMERO DEL DNI INTRODUCIDO
+            //let numero = document.getElementById("txtDNI").value;
+            
+           // console.log("DNI válido");
+            //LLAMAR AL SERVIDOR, CON ESE NÚMERO
+            let url = URL_INFO_GIT;//calcularURL(numero);
+            console.log("URL = " + url);
+            xhr.open("GET", url);
+            xhr.onreadystatechange = recibirLetra;
+            xhr.send();
+        
+            
+
+        }
+
+        function recibirLetra() {
+            if (xhr.readyState == 4) {
+                console.log("respuesta rx");
+                let estado_http = xhr.status;
+                
+                console.log("estado = "+ estado_http);
+                switch (estado_http) {
+                    case 200:
+                    let info_json = xhr.responseText;
+                let datos_persona = JSON.parse(info_json);
+                document.getElementById("txtDNI").value= datos_persona.dni.numero;
+                    document.getElementById("txtLetra").value= datos_persona.dni.letra;
+                    document.getElementById("txtNombre").value= datos_persona.nombre;
+                    document.getElementById("txtApe").value= datos_persona.apellidos;
+                    document.getElementById("txtMensaje").value= datos_persona.mensaje;
+
+                        break;
+                
+                    case 204:
+                        alert("No existe un usuario con ese DNI");
+                        break;
+
+                    case 400:
+                    alert("Petición incorrecta");
+                        break;
+                    default:
+                    alert("Hubo un fallo, inténtelo más tarde");
+                        break;
+                }
+                if (xhr.status == 200) {
+                    console.log("respuesta OK");
+                    let letra_rx = xhr.responseText;
+                    console.log("letra rx = " + letra_rx);
+    
+
+                } else {
+                    console.log("COd respuesta " + xhr.status);
+                }
+            }
+        }
+        //https://itunes.apple.com/search?media=music&term=Raphael
+        /*
+{
+    "dni": {
+        "numero": 71264975,
+        "letra": "G"
+    },
+    "nombre": "Oscar",
+    "apellidos": "Ibeas Merino",
+    "mensaje": "Siento decirte que el Geta va mal"
+}
+        */
+
+    </script>
+</head>
+
+<body>
+    <fieldset style="width:400px">
+        <legend>CALCULADORA LETRA DNI</legend>
+        <label>Introduce tu DNI</label><br />
+        <input type="text" id="txtDNI" /><br />
+        <input onclick="obtenerInfoGit()" type="button" id="btnResultado" value="OBTENER INFO" /><br />
+        <label>LETRA</label><br />
+        <input type="text" id="txtLetra" /><br><br>
+        <label>Nombre</label><br />
+        <input type="text" id="txtNombre" /><br><br>
+        <label>Apellidos</label><br />
+        <input type="text" id="txtApe" /><br><br>
+        <label>Mensaje</label><br />
+        <input type="textarea" id="txtMensaje" size="50"/><br><br>
+    </fieldset>
+</body>
+
+</html>

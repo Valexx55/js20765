@@ -1,0 +1,181 @@
+FUNCIONALIDAD           ALUMNO
+
+Mapas Madrid
+Y Ubicación 
+Favorita                Juan Carlos
+
+        Hacer una sección de Mapas que incluya:
+
+            - Mapa con las restricciones https://comunidadmadrid.maps.arcgis.com/apps/webappviewer/index.html?id=4bc4b611915740cc99fdc1a10954b043
+            - Mapa con la incidencia por municipios https://comunidadmadrid.maps.arcgis.com/apps/PublicInformation/index.html?appid=cdfb61b3eb3a49c2b990b4fdb41dfcfe
+            - Mapa con la incidencia por ZBS https://comunidadmadrid.maps.arcgis.com/apps/PublicInformation/index.html?appid=7db220dc2e0a40b4a928df661a89762e
+
+        Integrarlo en un IFRAME o así de modo que se puedan ver en una misma página (o hacerlos deslizantes)
+        Nada de volverse loco con el API de Google, ARCGIS. A lo fácil - que no será tanto -
+
+        Mi ZONA
+
+        Una sección donde el usuario pueda seleccionar su zona y su zbs y se muestren los datos 
+        de incidencia allí. Como propuesta , en esta seección puede aparecer Bien el último dato de incidencia, 
+        o la información de si sube o baja respecto al dato anterior.
+
+Datos CAM
+LOCALIDAD ZBS           Jon y Óscar
+
+        Con estos datos (desde el 2 de Julio, suficiente)
+
+        Datos por Municipios y distritos https://datos.comunidad.madrid/catalogo/dataset/covid19_tia_muni_y_distritos/resource/877fa8f5-cd6c-4e44-9df5-0fb60944a841
+        Datos por ZBS https://datos.comunidad.madrid/catalogo/dataset/covid19_tia_zonas_basicas_salud/resource/907a2df0-2334-4ca7-aed6-0fa199c893ad
+
+        Intentad hacer una página que permita mostrar los datos de forma visual. Propongo:
+
+        Gráfico por ZBS (Y para ZBS y X para último dato de indicencia)
+        Gráfico por Localidad (Y para LOCALIDAD/distrito y X para último dato de indicencia)
+        Indicar si sube o baja...en los últimos 5 días...
+
+        Tirar por lo sencillo. Para amplliar hay tiempo
+
+        
+
+
+COMPARATIVA
+por Localidad o ZBS     Natalia
+
+        Una pantalla que permita seleccionar dos ZBS o Localidades/Distritos y mostrar datos de ambas.
+        Tira por lo sencillo!!
+
+
+    En estas secciones, podría veniros bien tener un listado local con las ZBS, Localidades o Datos de indicencia.
+    Y usar los datos referidos en la sección asignada a Jon y Oscar.
+
+    No os compliquéis Intentad cumplir con la funcionalidad esperada de la manera más sencilla posible
+
+    Podeis encotrar problemas "serios" que limiten la funcionalidad. De memoria o espacio 
+    Una alternativa a estos sería almacenar localmente los JSON.
+    Que complicaría la cosa. Porque sería necesario "programar" alguna tarea de inicio
+    pero bueno. Contad con la versión remota por la URI de momento.
+
+    Un gif de cargando mientras se obtienen los datos será seguramente necesario.
+
+
+
+CRÉDITOS
+Y HUEVO DE PASCUA       Jaime
+
+    Reunir los siguientes datos de todos los compañerso:
+
+        Nombre
+        Linkedin
+        GITHUB
+        Foto/avatar
+
+    Podría ser conveniente que estuvieran estos datos en un JSON local y cargalos de manera dinámica.
+
+    Por supuesto, si algún compañero quiere aparecer con un alias u otra información o no quiere aparecer...
+    se le respeta.
+
+    Respecto al huevo de pascua...es una cosa tan creativa que no puedo darte pistas.
+    En las apps hasta ahora, ha sido con un número de toques en un botón o una presión larga
+    lo que ha lanzado algún tipo de animación o audio.
+
+DATOS MINISTERIO
+CONTAGIOS CCAA    Ana y Nacho
+
+    Los datos de contagios en España aparecen recogidos de manera oficial por el Ministerio aquí:
+
+    https://cnecovid.isciii.es/covid19/resources/casos_diagnostico_ccaa.csv
+
+    Es un CSV (fichero separado por comas) con los datos por Comunidad y tipo de prueba diagnosticada
+
+    Podéis encontrar ejemplos de parseo de CSV en JS en StackOverflow u otros sitios.
+
+    También podrías encontrar problemas por el tamaño del archivo o la memoria.
+    Soluciones a esos problemas serían tener almacenado parte en local o procesar solo una parte.
+    Las veríamos si salen. De momento intentad consumir los datos del URI que os facilito.
+
+    Igual que los compañeros de arriba del documento, podríais necesitar un GIF o así mientras
+    se descargan los datos
+
+
+NOTICIAS OMS            Ilde y Juanan
+RSS                     
+
+    Cogiendo la URL https://www.who.int/feeds/entity/mediacentre/news/es/rss.xml
+    veis que es un XML de noticias.
+
+    Con AJAX podéis descarglo y una vez descargado parsearlo y mostrarlo
+    Ejemplo de cómo parsear un xml https://stackoverflow.com/questions/17604071/parse-xml-using-javascript
+
+    Además del RSS de la OMS estaría bien que obtuvieseis otra fuente RSS de noticias.
+    Así, vuestra sección de noticias podría tener OMS y otras fuentes al menos.
+    
+
+AUTO TEST               Hector y Ernesto
+
+    Aquí viene un ejemplo de auto test de la CAM
+    https://coronavirus.comunidad.madrid/
+
+    También está en su APP CoronaMadrid
+
+    Carta blanca. Podeis hacer varias páginas/test o todo el una...
+    podeis guardar el resultado o no...
+    dar algún consejo de contacto ...
+
+    El caso es que el usuario pueda autoevaluarse de algún modo.
+
+ICONO
+MENÚS
+CSS                     Olga
+
+            Céntrate en el ICONO de momento Olga.
+            Aquí tienes una herramienta web que te permite generarlo en disintas resoluciones
+            https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+
+            Para diseñarlo, desde Paint, Word hasta Photosop o cualquier página o recursos que encuentres
+
+            Después veremos el menú. Ahí te echaré un mano porque es clave
+
+            Ve pensando si quieres en los colores o estilos/maqueta de las páginas. Cabecera/pie, etc.
+
+DATOS VACUNACIÓN        Adal y Emilio
+
+
+    Ya proporcionó Emilio las fuentes. Partiendo de esos enlances
+
+    https://ourworldindata.org/covid-vaccinations
+    https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations.csv
+
+    podeis generar una sección que incruste el mapa (tipo iframe) o que recupere y parse los datos
+    y los muestre de alguna manera.
+
+    Carta blanca. Pero siempre tirar a lo fácil. El caso es que se muestre alguna info
+
+DATOS HOSPITALES
+(GITHUB)                Carlos
+
+    Simplemente haz un repositorio en github que albergue los datos de pacientes hospitalizados en Madrid
+    extraidos manualmente de los informes diarios por ejemplo
+
+    https://www.comunidad.madrid/sites/default/files/doc/sanidad/210112_cam_covid19.pdf
+
+    Incluye al menos eso: hospitalizados y UCI y la fecha
+
+    Luego usando https://my-json-server.typicode.com/
+
+    consume esos datos desde tu página.
+
+
+
+DOCUMENTACIÓN
+y UML                   Pilar y Mar
+
+    Os daré una guía pronto con varios puntos que debe tener la documentación.
+    Con toda la información que tenéis aquí, sí que podéis de momento, 
+    intentar hacer el Diagrama de Casos de USO 
+
+    El dibujito con viñetas que expresa qué puede hacer la app desde el puntos
+    de vista del usuario.
+
+TAREAS PENDIENTES: GIT, Pantalla animación
+
+

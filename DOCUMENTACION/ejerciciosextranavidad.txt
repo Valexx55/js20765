@@ -1,0 +1,37 @@
+API perros
+    https://dog.ceo/dog-api/
+    Cargar un tablero de 3*3
+    con imágenes aleatorias de perros
+    y un botón para que se regenere
+
+API GATOS https://placekitten.com/
+    Imágnes de gatos a la carta
+    elgiendo el tamaño
+
+https://jsonplaceholder.typicode.com/
+
+    DAR UN ID DE ALBUM y mostrar
+    las fotos de ese ALBUM
+
+API ITUNES
+    BUSCAR CANCIONES 
+
+https://rickandmortyapi.com/
+    descargar pesonajes
+
+
+API GOOGLE (MAPAS, PLACES)
+
+MEMORY - ENCONTRAR PAREJAS
+
+OTRAS APIS
+
+    http://superheroapi.com/ 
+    https://pixabay.com/api/docs/ 
+    https://developer.accuweather.com/ 
+    https://pokeapi.co/
+    https://www.resultados-futbol.com/api/documentacion
+    https://www.themoviedb.org/ 
+    https://newsapi.org/
+    https://swapi.dev/api (( STAR WARS))
+  

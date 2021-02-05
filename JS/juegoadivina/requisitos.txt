@@ -1,0 +1,18 @@
+RF  (REQUISITOS FUNCIONALES)
+1) INTRO NOMBRE x
+2) GUARDAR NOMBRE x (modo incógnito)
+3) MOSTRAR NOMBRE x
+4) MODIFICAR x
+5) CONTROLO PAG INICIO X
+6) LLEVAR LOS NUMEROS Q VAN SALIENDO
+
+    6.1 Declrar el array
+    let numeros_jugados = [];
+    6.2 Guardar numero jugado
+    numeros_jugados.push (numero_jugado)
+    6.3 Mostrar el array de numeros_jugados
+    for (tradicional, for each, for of)
+    6.4 Vaciarlo
+    numeros_jugados=[]//null
+    6.5 ordenar
+    numeros_jugados.sort()

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="juegoadivina/juego2.js"></script>
+    <script>
+        //CREARME UN VARIABLE/OBJETO DE TIPO/CLASE PARTIDA
+        let partida = new Partida ("JESS", 5);
+        let string_partida = JSON.stringify(partida);
+        console.log (string_partida);//serializamos
+        let partida2 = JSON.parse(string_partida);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

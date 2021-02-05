@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        
+        function varTest() {
+            var x = 31;
+            if (true) {
+                var x = 71;  // ¡misma variable!
+                console.log(x);  // 71
+            }
+            console.log(x);  // 71
+        }
+
+        function letTest() {
+            let x = 31;
+            if (true) {
+                let x = 71;  // variable diferente
+                console.log(x);  // 71
+            }
+            console.log(x);  // 31
+        }
+        // llamamos a las funciones
+        varTest();
+        letTest();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+
+
+
+1.Above all, think first WHAT you want to GET, 
+separating it of HOW you will get it. Ideally, 
+you should use a formal lenguaje (as UML), 
+but any kind of mock is welcome to express 
+the funcionality expected.
+
+
+
+
+
+
+2.Once you get a clear idea about WHAT to do, 
+spend some time giving some thoughts about HOW 
+to do it. At least, you will always find two or 
+more ways to do the same task, and one of them, 
+will be better than the others 
+(more efficient, logical or reusable)
+
+
+
+
+3.Don’t forget to make always comments in your code. 
+It will be helpfull; even for yourself.
+
+
+
+
+
+4.Use representative identifiers, naming variables, 
+classes and functions properly. Don’t mind if 
+an identifier becomes a bit long.
+
+
+
+
+
+5.Test your code every few lines. For sure, 
+eventually, you will have to do formal unit and 
+integrated tests, but, try to get used to testing 
+every bit. Otherwise, you could lose too much 
+time after.
+
+
+
+
+6.If a function takes up more than a screen, 
+try to divide it. It will be always better 
+and easier to maintain.
+
+
+
+7.Keep a “Main” always available: If you are not 
+sure about how a function or a library works, keep 
+it simple: give it a try.
+
+
+
+8.Ctrl + S: Please, make always a 
+backup of your work day. 
+Using an external repository, is a must.
+
+
+
+9.If you could define a data as constant, 
+or property, do it. The more constants you use, 
+the better code you will get.
+
+
+
+10.If you become very confused with some algorithm, 
+stop thinking about it. Take a breath! 
+Although you aren’t aware of it, your mind will 
+continue working in the background and will 
+resolve it magically. Eureka! ;)
+
+
+EXTRA (+1) Last but not least “Divide and conquer”. 
+Try always to subdivide each process into 
+smaller ones. For each one of these subprocesses, 
+identify clearly INPUT, OUTPUT and FUNCTION, 
+before start coding.
+

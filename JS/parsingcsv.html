@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<!--ejemplo de parseo de datos en CSV y RSS (XML)-->
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        //onload = cargaCSV;
+        onload = cargarDatos;
+
+        function parseCSV(str) {
+            var arr = [];
+            var quote = false;  // 'true' means we're inside a quoted field
+
+            // Iterate over each character, keep track of current row and column (of the returned array)
+            for (var row = 0, col = 0, c = 0; c < str.length; c++) {
+                var cc = str[c], nc = str[c + 1];        // Current character, next character
+                arr[row] = arr[row] || [];             // Create a new row if necessary
+                arr[row][col] = arr[row][col] || '';   // Create a new column (start with empty string) if necessary
+
+                // If the current character is a quotation mark, and we're inside a
+                // quoted field, and the next character is also a quotation mark,
+                // add a quotation mark to the current column and skip the next character
+                if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }
+
+                // If it's just one quotation mark, begin/end quoted field
+                if (cc == '"') { quote = !quote; continue; }
+
+                // If it's a comma and we're not in a quoted field, move on to the next column
+                if (cc == ',' && !quote) { ++col; continue; }
+
+                // If it's a newline (CRLF) and we're not in a quoted field, skip the next character
+                // and move on to the next row and move to column 0 of that new row
+                if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
+
+                // If it's a newline (LF or CR) and we're not in a quoted field,
+                // move on to the next row and move to column 0 of that new row
+                if (cc == '\n' && !quote) { ++row; col = 0; continue; }
+                if (cc == '\r' && !quote) { ++row; col = 0; continue; }
+
+                // Otherwise, append the current character to the current column
+                arr[row][col] += cc;
+            }
+            console.log(arr);
+
+            let lista_ccaa = arr.slice(1,20);//me quedo con 20 comunidades
+            console.log(lista_ccaa);
+            let lista_nombres = lista_ccaa.map(cam => cam[0]);//extraigo el nombre
+            console.log ("lista nombres cams = ");
+            console.log (lista_nombres);
+            let lista_completa_comunidades;
+            for (const acronimo of lista_nombres) {
+                console.log(acronimo);
+                //swtich si es AN --> añado a lista_completa_comunidades Andalucia ..
+                //swtich si es AR --> añado a lista_completa_comunidades Aragon ..
+            }
+            return arr;
+        }
+
+
+
+        function cargaCSV() {
+            //fetch('datoszbscam.json')
+            //fetch('https://my-json-server.typicode.com/valexx55/datoszbs/datoszbs')
+            //fetch('datosvac.csv')
+            fetch("https://cnecovid.isciii.es/covid19/resources/casos_diagnostico_ccaa.csv")
+                .then(response => response.text())
+                .then(data => parseCSV(data));
+            //.then(response => response.json())
+            //.then(data => console.log(data));
+            // .then(data => console.log(data));
+        }
+
+        function cargaXML() {
+            fetch("https://www.who.int/feeds/entity/mediacentre/news/es/rss.xml")
+            //fetch("http://www.madrid.org/cs/Satellite?idCanal=1191581448946&language=es&pagename=ComunidadMadrid%2FComunes%2FPresentacion%2Fxml_TodasLasConvocatorias")
+                .then(response => response.text())
+                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                .then(data => console.log(data))
+        }
+
+        //https://covid-vacuna.app/data/latest.json
+
+        function cargaVacunasJSON() {
+            fetch("https://covid-vacuna.app/data/latest.json")
+            //fetch("http://www.madrid.org/cs/Satellite?idCanal=1191581448946&language=es&pagename=ComunidadMadrid%2FComunes%2FPresentacion%2Fxml_TodasLasConvocatorias")
+                .then(response => response.json())
+                .then(data => console.log(data))
+        }
+
+        function cargarDatos ()
+        {
+            cargaCSV();
+            cargaXML();
+            cargaVacunasJSON();
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+        HACER UNA APP QUE HAGA LO SIGUIENTE:
+
+         LA PÁGINA DEBE PENSAR UN NÚMERO DEL 1 AL 100
+        Y DEBE DARLE 5 OPORTUNADIDES MÁXIMO AL USUARIO
+        PARA ADIVINARLO
+
+        DEBEMOS MOSTRAR UN CONTADOR DE LAS VIDAS QUE LE QUEDAN
+        AL USUARIO EN TODO MOMENTO
+
+        DEBEMOS INFORMARLE CADA VEZ QUE PRUEBA SI 
+        EL NUMERO INTROUCIDO ES MENOR O MAYOR QUE EL BUSCADO
+        A MODO DE PISTA
+
+        SI LO ACIERTA, LE FELICTAMOS CON UN GIF ANIMADO
+        SI FALLA, IGUAL, PERO ADEMAS, LE INDICAMOS EL NÚMERO BUSCADO
+
+    -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Adivina número</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <script src="juego1.js"></script>
+    <script src="juego2.js"></script>
+</head>
+
+<body>
+    <div id="divjuego">
+        <div id="nombre_jugador"></div>
+        <a href="#" onclick="reiniciar()">VOLVER A JUGAR</a>
+        <a href="#" onclick="cambiarNombre()">CAMBIAR NOMBRE</a>
+        <a href="resultados.html">VER RECORDS</a>
+        <!-- <a href="juego.html" onclick="reiniciar()">VOLVER A JUGAR</a> -->
+        <br>
+        <input type="number" id="num_usuario">
+        <input type="button" value="PROBAR" onclick="comprobarIntento()">
+        <div id="vidas"></div>
+        <div id="intetos">VIDAS</div>
+        <div id="numeros_jugados"></div>
+        <div id="info"></div>
+        <img id="imgres">
+    </div>
+
+    <div id="divnojuego">
+        <a href="intronombre.html" id="mensaje_nombre_obligatorio" onclick="cambiarNombre()">DEBE INTRODUCIR UN NOMBRE
+            OBLIGATORIO</a>
+    </div>
+
+</body>
+
+</html>
