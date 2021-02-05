@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input type="number" placeholder="mete tu nº de dni" [(ngModel)]="num"></ion-input>
+  <ion-button (click)="calcularLetra()">BOTON</ion-button>
+  <!-- routerDirection="back" routerDirection="root"-->
+  <ion-button routerLink="/imc" routerDirection="root">IR A IMC</ion-button>
+  <ion-card *ngIf="letra">
+    <ion-card-header>
+      <ion-card-title>RESULTADO LETRA</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{letra}}
+    </ion-card-content>
+  </ion-card>
+
+  {{letra}}
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listapelis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="array_pelis?.length>0">
+    <ion-slides effect="cube" pager="true" paginationType="progress" loop="true" slidesPerView="1" style="background-color:rgb(66, 66, 248)">
+      <ion-slide *ngFor="let peli of array_pelis" style="background-color:white">
+        <h3>{{peli.idfoto}}</h3>
+        <img data-src="{{peli.ruta}}" (click)="peliTocada(peli)">
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

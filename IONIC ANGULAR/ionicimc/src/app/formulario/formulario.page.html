@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--AQUÍ VA EL FORMULARIO-->
+<form #formulario_login="ngForm" (ngSubmit)="acceder(formulario_login.value)">
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="login.nombre" required pattern=".{4,}"></ion-input>
+    <small [hidden]="!(formulario_login.submitted && !nombre.valid)">Nombre al menos de 4 letras</small>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pwd</ion-label>
+    <ion-input type="password" name="pwd" #pwd="ngModel" [(ngModel)]="login.pwd" required></ion-input>
+    <small [hidden]="!(formulario_login.submitted && !pwd.valid)">Contraseña obligatoria</small>
+  </ion-item>
+  <ion-button type="submit" shape="round"
+  [disabled]=!(formulario_login.valid)>Acceder</ion-button>
+</form>
+</ion-content>

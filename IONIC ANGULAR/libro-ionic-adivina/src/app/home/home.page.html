@@ -19,6 +19,7 @@
       </ion-card-content>
     </ion-card>     
     <ion-button *ngIf="mayorMenor!=''" expand="block" (click)="compruebaNumero()">Adivina</ion-button>
-    <ion-button *ngIf="mayorMenor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button>     
+    <ion-button *ngIf="mayorMenor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button> 
+    <img *ngIf="haganado" src="https://odioeternoalfutbolmoderno.es/wp-content/uploads/2020/09/Guti.jpg">    
   </div>
 </ion-content>
