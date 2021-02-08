@@ -1,7 +1,0 @@
-{
-  "name": "adivina",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}

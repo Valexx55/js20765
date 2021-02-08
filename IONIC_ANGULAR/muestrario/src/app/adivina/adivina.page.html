@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Adivina el número secreto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-input type="number" min="1" max="100" [(ngModel)]="num" placeholder="Introduce un número del 1 al 100"></ion-input>
+    <p>El número secreto es {{ mayorMenor }} {{ num }}</p>
+    <ion-card *ngIf="mayorMenor==''">
+      <ion-card-header>
+        ¡¡¡Enhorabuena!!!
+      </ion-card-header>
+      <ion-card-content>
+        Has acertado, el número secreto es el {{ num }}
+      </ion-card-content>
+    </ion-card>     
+    <ion-button *ngIf="mayorMenor!=''" expand="block" (click)="compruebaNumero()">Adivina</ion-button>
+    <ion-button *ngIf="mayorMenor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button> 
+    <img *ngIf="haganado" src="https://odioeternoalfutbolmoderno.es/wp-content/uploads/2020/09/Guti.jpg">    
+  </div>
+</ion-content>

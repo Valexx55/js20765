@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calcula Tu Índice de Masa Corporal</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input type="number" placeholder="Intro Peso (kg)" [(ngModel)]="imc.peso"></ion-input>
+  <ion-input type="number" placeholder="Intro Altura (m)" [(ngModel)]="imc.altura"></ion-input>
+  <ion-button (click)="calcularIMC()">CALCULAR</ion-button>
+  <ion-button [disabled]="!arrayimc?.length > 0"(click)="limpiarIMC()">LIMPIAR</ion-button>
+  <ion-button [disabled]="!arrayimc?.length > 0"(click)="ordenarPorPeso()">ORDENAR X PESO</ion-button>
+  <ion-button [disabled]="!arrayimc?.length > 0" (click)="ordenarPorAltura()">ORDENAR X ALTURA</ion-button>
+  <ion-grid>
+    <ion-list-header>
+      <ion-col>PESO</ion-col>
+      <ion-col>ALTURA</ion-col>
+      <ion-col>IMC</ion-col>
+      <ion-col>FOTO</ion-col>
+    </ion-list-header>
+  </ion-grid>
+  <div class="ion-content" *ngIf="arrayimc?.length > 0">
+    <ion-grid *ngIf="arrayimc?.length > 0">
+      <ion-row *ngFor="let oimc of arrayimc">
+        <ion-col>{{oimc.peso}}</ion-col>
+        <ion-col>{{oimc.altura}}</ion-col>
+        <ion-col>{{oimc.nominal}}</ion-col>
+        <ion-col><ion-img [src]="oimc.foto"></ion-img></ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </div>
+
+</ion-content>

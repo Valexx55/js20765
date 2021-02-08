@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscador de canciones en ITUNES</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar animated="true" [(ngModel)]="termino" (search)="buscar($event)" placeholder="Introduce canción ...">
+  </ion-searchbar>
+
+  <div *ngIf="lista_canciones">
+    <ion-slides effect="cube" pager="true" paginationType="progress" loop="true" slidesPerView="1"
+      style="background-color:rgb(66, 66, 248)">
+      <ion-slide *ngFor="let cancion of lista_canciones" style="background-color:white">
+        <h3>{{cancion.artistName}}</h3>
+        <img data-src="{{cancion.artworkUrl100}}">
+        <br>
+        <h3>{{cancion.trackName}} </h3>
+        <audio src="{{cancion.previewUrl}}" controls="true"></audio>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
